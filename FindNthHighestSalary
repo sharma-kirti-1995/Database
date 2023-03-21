@@ -1,1 +1,4 @@
 
+SELECT * FROM ( SELECT e.*, ROW_NUMBER() OVER (ORDER BY salary DESC) rn FROM Employee e ) WHERE rn = N;
+
+SELECT * FROM (SELECT ENAME, SAL, DENSE_RANK() OVER(ORDER BY SAL DESC)r) from employee where r=&n; 
